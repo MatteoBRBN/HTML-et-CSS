@@ -1,0 +1,53 @@
+body
+{
+    background-color: grey;
+    color: white;
+}
+
+.Texte1
+{
+    background-color: cornflowerblue;
+    color: white;
+    border: 10px darkred dashed;
+    background-clip: border-box ;
+    background-image: url(Photo/pingouin.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+}
+
+.Texte2
+{
+
+    background-color: lightgreen;
+    color: white;
+    border: 10px darkred dashed;
+    background-clip: content-box;
+    background-image: url(Photo/pingouin.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+}
+
+.Texte3
+{
+    background-color: rebeccapurple;
+    color: white;
+    border: 10px darkred dashed;
+    background-clip: padding-box;
+    background-image: url(Photo/pingouin.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
