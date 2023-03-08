@@ -1,0 +1,561 @@
+/* Base */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+*
+{
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+/* Menu */
+
+
+.menu{
+   width: 100%;
+   position: fixed;
+   top:30px;
+   text-align:center;
+}
+.menu a{
+   font-family: 'Oswald', sans-serif;
+   text-transform:uppercase;
+   text-decoration:none;
+   color: #ffffff;
+   margin:0 15px;
+   font-size:16px;
+   letter-spacing:1px;
+   position:relative;
+   display:inline-block;
+}
+.menu a:before{
+   content:'';
+   position: absolute;
+   width: 100%;
+   height: 3px;
+   background: #931e1e;
+   top:100%;
+   animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+.menu a:hover:before{
+   animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+
+}
+@keyframes in{
+   0%{
+      width: 0;
+      left:0;
+      right:auto;
+   }
+   100%{
+      left:0;
+      right:auto;
+      width: 100%;
+   }
+}
+@keyframes out{
+   0%{
+      width:100%;
+      left: auto;
+      right: 0;
+   }
+   100%{
+      width: 0;
+      left: auto;
+      right: 0;
+   }
+}
+@keyframes show{
+   0%{
+      opacity:0;
+      transform:translateY(-10px);
+   }
+   100%{
+      opacity:1;
+      transform:translateY(0);
+   }
+}
+
+
+
+/* Fond */
+body
+{
+background: white;
+}
+/* diapo */
+
+
+*{box-sizing:border-box}
+
+img{
+
+   max-width: 100%;
+
+}
+
+/*pour le saut de page, on cree une class que l'on met en display:none*/
+.target{
+
+   display: none
+
+}
+
+
+/* englobe le slider */
+
+.cadre_diapo{
+
+   max-width: 900px;
+   overflow: hidden;
+   position: relative;
+   top: 132px;
+   margin: auto;
+   z-index: 5 ;
+
+
+}
+
+.interieur_diapo{
+
+   display: flex;
+   width: 400%;
+   transition: transform .6s ease-in-out
+
+}
+
+.description{
+
+   position: relative;
+
+}
+
+.description span{
+
+   position: absolute;
+   left: 0;
+   top: 2%;
+   font-size: 75%;
+   display: flex;
+   padding: .5rem;
+   justify-content: center;
+   color: white;
+   background: hsla(0,0%,0%,.35)
+
+}
+
+
+#image1:target ~ .cadre_diapo .interieur_diapo{
+
+   transform:translatex(0)
+
+}/*image 1*/
+
+#image2:target ~ .cadre_diapo .interieur_diapo{
+
+   transform:translatex(-25%)
+
+}/*image 2*/
+
+#image3:target ~ .cadre_diapo .interieur_diapo{
+
+   transform:translatex(-50%)
+
+}/*image 3*/
+
+#image4:target ~ .cadre_diapo .interieur_diapo{
+
+   transform:translatex(-75%)
+
+}/*image 4*/
+
+
+
+
+
+/*navigation avec images miniatures*/
+.navigation_diapo{
+
+   display: flex; /*permet d'aligner les photos les unes à la suite des autres, on peut aussi utiliser le positionnement absolu*/
+   list-style-type: none;
+   margin: 0;
+   padding: 0
+
+}
+
+.navigation_diapo li {
+
+   padding: .25rem;
+
+}
+
+.navigation_diapo img{
+
+   border: 3px solid white;
+   box-shadow:0 0 5px hsla(0,0%,0%,.4);
+
+
+}
+
+
+@media (min-width:31.25rem){
+
+   .description span{
+
+      font-size: initial
+
+   }
+
+}
+
+
+
+
+/* Barre de fond */
+
+.barreNoir {
+   width: 100%;
+   height: 80px;
+   position: absolute;
+   left: 0;
+   background: #0e1533;
+   border-bottom: solid black 7px
+
+}
+
+
+
+
+
+/* produit */
+
+.titreProduit1
+{
+   position: absolute;
+   margin-top: 218px;
+   margin-left: 104px;
+   width: 100px;
+   font-size: 50px;
+}
+
+.titreProduit2
+{
+   position: absolute;
+   margin-top: 150px;
+   margin-left: 780px;
+   font-size: 45px;
+}
+
+
+.carteP {
+   background-color: whitesmoke;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-row-gap: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   height: 280px;
+   width: 280px;
+   position: absolute;
+   top : 240px;
+}
+
+.produitPos1 {
+   margin-left : 550px;
+}
+
+.produitPos2 {
+   margin-left : 900px;
+}
+
+.produitPos3 {
+   margin-left : 1250px;
+}
+
+
+.imageP {
+   grid-row: 1 / 2;
+   grid-column: 1 / -1;
+   width: 100%;
+   border-radius: 10px 10px 0 0;
+   border-bottom: #3e3e3e solid 3px;
+}
+
+{
+   position: relative;
+   top: 8px;
+   right: 4px;
+}
+
+.origine, .quantité, .prix {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   font-size: 28px;
+   grid-column: 1 / 3;
+   grid-row-gap: 0;
+   padding-top: 15px;
+}
+.origine i, .quantité i, .prix i {
+   color: #4e4e4e;
+   font-size: initial;
+   margin-right: 8px;
+   position: relative;
+   top: 8px;
+   right: 4px;
+}
+
+.bouton {
+   grid-column: 1 / -1;
+   background-color: #4e4e4e;
+   text-decoration: none;
+   color: white;
+   text-align: center;
+   font-size: 18px;
+   padding: 10px 0;
+   text-transform: uppercase;
+}
+
+.bouton:hover {
+
+   background-color: #0e1533;
+   font-size: 19px;
+}
+
+.nom {
+   text-transform: uppercase;
+   width: 70%;
+   background-color: #4e4e4e;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   border-radius: 5px;
+   align-self: end;
+   justify-self: center;
+   grid-column: 1 / 3;
+   grid-row: 1 / 2;
+   translate: 0 50% 0;
+}
+
+
+
+/* bouton SP */
+
+.sep1, .sep2
+{
+   content: " ";
+   height: 760px;
+   width: 840px;
+   background-color: rgba(6, 11, 24, 0.9);
+   position: absolute;
+   top: 80px;
+}
+
+.sep1
+{
+   position: absolute;
+   margin-left: 0;
+
+}
+
+
+.sep2
+{
+   position: absolute;
+   margin-left: 840px;
+   background-color: rgba(14, 21, 51, 0.9);
+}
+
+
+/*.sep1:hover*/
+/*{*/
+/*   background-color: rgba(96, 102, 124, 0.72);*/
+/*   transition: all 500ms;*/
+/*}*/
+
+/* BOUTON */
+:root{
+   /* color type A */
+   --line_color : #a6a6a6;
+   --back_color : #FFECF6  ;
+
+   /* color type B */
+   /* --line_color : #1b1919 ;
+   --back_color : #E9ECFF  ; */
+
+   /* color type C */
+   /* --line_color : #00135C ;
+   --back_color : #DEFFFA  ; */
+}
+
+.button{
+   position : relative ;
+   z-index : 0 ;
+   width : 240px ;
+   height : 52px ;
+   text-decoration : none ;
+   font-size : 14px ;
+   font-weight : bold ;
+   color : var(--line_color) ;
+   letter-spacing : 2px ;
+   transition : all .3s ease ;
+}
+.button__text{
+   display : flex ;
+   justify-content : center ;
+   align-items : center ;
+   width : 100% ;
+   height : 100% ;
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after{
+   content : '' ;
+   position : absolute ;
+   height : 3px ;
+   border-radius : 2px ;
+   background : var(--line_color) ;
+   transition : all .5s ease ;
+}
+.button::before{
+   top : 0 ;
+   left : 54px ;
+   width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button::after{
+   top : 0 ;
+   right : 54px ;
+   width : 8px ;
+}
+.button__text::before{
+   bottom : 0 ;
+   right : 54px ;
+   width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__text::after{
+   bottom : 0 ;
+   left : 54px ;
+   width : 8px ;
+}
+.button__line{
+   position : absolute ;
+   top : 0 ;
+   width : 56px ;
+   height : 100% ;
+   overflow : hidden ;
+}
+.button__line::before{
+   content : '' ;
+   position : absolute ;
+   top : 0 ;
+   width : 150% ;
+   height : 100% ;
+   box-sizing : border-box ;
+   border-radius : 300px ;
+   border : solid 3px var(--line_color) ;
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before{
+   left : 0 ;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before{
+   right : 0 ;
+}
+.button:hover{
+   letter-spacing : 6px ;
+}
+.button:hover::before,
+.button:hover .button__text::before{
+   width : 8px ;
+}
+.button:hover::after,
+.button:hover .button__text::after{
+   width : calc( 100% - 56px * 2 - 16px ) ;
+}
+
+.boutonsep1, .boutonsep2{
+   height : 300px ;
+   display : flex ;
+   flex-direction : column ;
+   justify-content : center ;
+   align-items : center ;
+   top : 450px;
+}
+
+.boutonsep1
+{
+   position: absolute;
+   left : 320px ;
+}
+
+
+.septitre1, .septitre2
+{
+   color: #FFECF6 ;
+   margin-top: 125px;
+   text-transform: uppercase;
+   margin-left: 240px;
+}
+
+.sepdesc1, .sepdesc2
+{
+   color: #FFECF6 ;
+   margin-left: 180px;
+   text-align: justify;
+   position: absolute;
+   margin-top: 150px;
+   font-size: 20px;
+
+}
+ /*  HISTOIRE */
+
+.sepHistoire
+{
+   content: " ";
+   height: 760px;
+   width: 100%;
+   background-color: rgba(6, 11, 24, 0.9);
+   position: absolute;
+   top: 80px;
+}
+
+.sepPersonnel
+{
+   content: " ";
+   height: 760px;
+   width: 100%;
+   background-color: rgba(14, 21, 51, 0.9);
+   position: absolute;
+   top: 80px;
+}
+
+ /*  PERSONNEL */
+
+
+
+
+
+
+
+/* footer */
+.foot {
+   color: white;
+   text-decoration: none;
+   font-size: 20px;
+   text-align: center;
+
+
+}
+
+footer {
+   border-top: solid black 7px;
+   position:absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   background-color: #0e1533;
+   list-style-type: none;
+   padding: 10px;
+}
+
